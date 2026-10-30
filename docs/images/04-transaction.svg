@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Noto Serif CJK SC, sans-serif" font-size="14">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f46e5"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker></defs>
+<rect width="1000" height="700" fill="#ffffff"/>
+<text x="500" y="32" font-size="20" text-anchor="middle" fill="#111827" font-weight="bold">事务：令牌 + 数据 + 握手，三个包一组</text>
+<rect x="20" y="58" width="300" height="470" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+<text x="170.0" y="84" font-size="15" text-anchor="middle" fill="#374151" font-weight="bold">① OUT 事务：主机 → 设备</text>
+<rect x="34" y="98" width="72" height="30" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+<text x="70.0" y="117.55" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">主机</text>
+<rect x="234" y="98" width="72" height="30" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="270.0" y="117.55" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">设备</text>
+<line x1="70" y1="128" x2="70" y2="516" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 4"/>
+<line x1="270" y1="128" x2="270" y2="516" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 4"/>
+<line x1="70" y1="160" x2="264" y2="160" stroke="#4f46e5" stroke-width="2.2" marker-end="url(#ahb)"/>
+<text x="170.0" y="153" font-size="13" text-anchor="middle" fill="#4f46e5" font-weight="bold" font-family="monospace">OUT addr=1 ep=1</text>
+<line x1="70" y1="205" x2="264" y2="205" stroke="#16a34a" stroke-width="2.2" marker-end="url(#ahg)"/>
+<text x="170.0" y="198" font-size="13" text-anchor="middle" fill="#16a34a" font-weight="bold" font-family="monospace">DATA0 "hi"</text>
+<line x1="270" y1="250" x2="76" y2="250" stroke="#ea580c" stroke-width="2.2" marker-end="url(#aho)"/>
+<text x="170.0" y="243" font-size="13" text-anchor="middle" fill="#ea580c" font-weight="bold" font-family="monospace">ACK</text>
+<text x="170" y="290" font-size="12" text-anchor="middle" fill="#4b5563">设备收下数据，期望下次是 DATA1</text>
+<line x1="70" y1="340" x2="264" y2="340" stroke="#4f46e5" stroke-width="2.2" marker-end="url(#ahb)"/>
+<text x="170.0" y="333" font-size="13" text-anchor="middle" fill="#4f46e5" font-weight="bold" font-family="monospace">OUT addr=1 ep=1</text>
+<line x1="70" y1="385" x2="264" y2="385" stroke="#16a34a" stroke-width="2.2" marker-end="url(#ahg)"/>
+<text x="170.0" y="378" font-size="13" text-anchor="middle" fill="#16a34a" font-weight="bold" font-family="monospace">DATA1 "usb"</text>
+<line x1="270" y1="430" x2="76" y2="430" stroke="#ea580c" stroke-width="2.2" marker-end="url(#aho)"/>
+<text x="170.0" y="423" font-size="13" text-anchor="middle" fill="#ea580c" font-weight="bold" font-family="monospace">ACK</text>
+<text x="170" y="470" font-size="12" text-anchor="middle" fill="#15803d">DATA0 / DATA1 轮流使用</text>
+<text x="170" y="492" font-size="12" text-anchor="middle" fill="#c2410c">缓冲满时设备回 NAK：待会再来</text>
+<rect x="350" y="58" width="300" height="470" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+<text x="500.0" y="84" font-size="15" text-anchor="middle" fill="#374151" font-weight="bold">② IN 事务：设备 → 主机</text>
+<rect x="364" y="98" width="72" height="30" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+<text x="400.0" y="117.55" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">主机</text>
+<rect x="564" y="98" width="72" height="30" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="600.0" y="117.55" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">设备</text>
+<line x1="400" y1="128" x2="400" y2="516" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 4"/>
+<line x1="600" y1="128" x2="600" y2="516" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 4"/>
+<line x1="400" y1="160" x2="594" y2="160" stroke="#4f46e5" stroke-width="2.2" marker-end="url(#ahb)"/>
+<text x="500.0" y="153" font-size="13" text-anchor="middle" fill="#4f46e5" font-weight="bold" font-family="monospace">IN addr=1 ep=1</text>
+<line x1="600" y1="205" x2="406" y2="205" stroke="#ea580c" stroke-width="2.2" marker-end="url(#aho)"/>
+<text x="500.0" y="198" font-size="13" text-anchor="middle" fill="#ea580c" font-weight="bold" font-family="monospace">NAK</text>
+<text x="500" y="240" font-size="12" text-anchor="middle" fill="#4b5563">固件还没准备数据：NAK，不是错误</text>
+<line x1="400" y1="290" x2="594" y2="290" stroke="#4f46e5" stroke-width="2.2" marker-end="url(#ahb)"/>
+<text x="500.0" y="283" font-size="13" text-anchor="middle" fill="#4f46e5" font-weight="bold" font-family="monospace">IN addr=1 ep=1</text>
+<line x1="600" y1="335" x2="406" y2="335" stroke="#16a34a" stroke-width="2.2" marker-end="url(#ahg)"/>
+<text x="500.0" y="328" font-size="13" text-anchor="middle" fill="#16a34a" font-weight="bold" font-family="monospace">DATA0 "pong"</text>
+<line x1="400" y1="380" x2="594" y2="380" stroke="#ea580c" stroke-width="2.2" marker-end="url(#aho)"/>
+<text x="500.0" y="373" font-size="13" text-anchor="middle" fill="#ea580c" font-weight="bold" font-family="monospace">ACK</text>
+<text x="500" y="418" font-size="12" text-anchor="middle" fill="#4b5563">注意：这里是主机回 ACK</text>
+<text x="500" y="450" font-size="12" text-anchor="middle" fill="#374151">设备从不主动发：</text>
+<text x="500" y="470" font-size="12" text-anchor="middle" fill="#374151">数据一直留在端点缓冲里，</text>
+<text x="500" y="490" font-size="12" text-anchor="middle" fill="#374151">等主机下一次 IN 来取</text>
+<rect x="680" y="58" width="300" height="470" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+<text x="830.0" y="84" font-size="15" text-anchor="middle" fill="#374151" font-weight="bold">③ ACK 丢了：翻转位防重复</text>
+<rect x="694" y="98" width="72" height="30" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+<text x="730.0" y="117.55" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">主机</text>
+<rect x="894" y="98" width="72" height="30" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="930.0" y="117.55" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">设备</text>
+<line x1="730" y1="128" x2="730" y2="516" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 4"/>
+<line x1="930" y1="128" x2="930" y2="516" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 4"/>
+<line x1="730" y1="150" x2="924" y2="150" stroke="#4f46e5" stroke-width="2.2" marker-end="url(#ahb)"/>
+<text x="830.0" y="143" font-size="13" text-anchor="middle" fill="#4f46e5" font-weight="bold" font-family="monospace">OUT</text>
+<line x1="730" y1="190" x2="924" y2="190" stroke="#16a34a" stroke-width="2.2" marker-end="url(#ahg)"/>
+<text x="830.0" y="183" font-size="13" text-anchor="middle" fill="#16a34a" font-weight="bold" font-family="monospace">DATA0 "xyz"</text>
+<text x="936" y="214" font-size="11" text-anchor="end" fill="#15803d">收下，期望 → DATA1</text>
+<line x1="930" y1="245" x2="830.0" y2="245" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="830.0" y="252" font-size="22" text-anchor="middle" fill="#dc2626" font-weight="bold">×</text>
+<text x="830.0" y="238" font-size="13" text-anchor="middle" fill="#dc2626" font-weight="bold">ACK（被噪声打坏）</text>
+<text x="724" y="274" font-size="11" text-anchor="start" fill="#b91c1c">等不到握手：重发同一包</text>
+<line x1="730" y1="310" x2="924" y2="310" stroke="#4f46e5" stroke-width="2.2" marker-end="url(#ahb)"/>
+<text x="830.0" y="303" font-size="13" text-anchor="middle" fill="#4f46e5" font-weight="bold" font-family="monospace">OUT</text>
+<line x1="730" y1="350" x2="924" y2="350" stroke="#16a34a" stroke-width="2.2" marker-end="url(#ahg)"/>
+<text x="830.0" y="343" font-size="13" text-anchor="middle" fill="#16a34a" font-weight="bold" font-family="monospace">DATA0 "xyz"</text>
+<text x="936" y="374" font-size="11" text-anchor="end" fill="#b91c1c">是 DATA0≠期望 → 旧包</text>
+<line x1="930" y1="405" x2="736" y2="405" stroke="#ea580c" stroke-width="2.2" marker-end="url(#aho)"/>
+<text x="830.0" y="398" font-size="13" text-anchor="middle" fill="#ea580c" font-weight="bold" font-family="monospace">ACK</text>
+<text x="936" y="428" font-size="11" text-anchor="end" fill="#15803d">回 ACK，但丢弃数据</text>
+<text x="830" y="470" font-size="13" text-anchor="middle" fill="#15803d">固件只收到一次 "xyz"</text>
+<text x="830" y="492" font-size="12" text-anchor="middle" fill="#4b5563">IN 方向同理：主机丢弃重复包</text>
+<text x="30" y="554" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">一个事务的四种结局</text>
+<rect x="30" y="570" width="460" height="48" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="44" y="600" font-size="15" text-anchor="start" fill="#c2410c" font-weight="bold" font-family="monospace">ACK</text>
+<text x="130" y="591" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">成功</text>
+<text x="130" y="609" font-size="12" text-anchor="start" fill="#4b5563">双方翻转位前进，发下一个包</text>
+<rect x="510" y="570" width="460" height="48" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="524" y="600" font-size="15" text-anchor="start" fill="#b45309" font-weight="bold" font-family="monospace">NAK</text>
+<text x="610" y="591" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">设备忙 / 没数据</text>
+<text x="610" y="609" font-size="12" text-anchor="start" fill="#4b5563">过一会儿重试，可以无限次（流量控制）</text>
+<rect x="30" y="628" width="460" height="48" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="44" y="658" font-size="15" text-anchor="start" fill="#b91c1c" font-weight="bold" font-family="monospace">STALL</text>
+<text x="130" y="649" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">端点停用 / 不支持</text>
+<text x="130" y="667" font-size="12" text-anchor="start" fill="#4b5563">立即停止，需要软件清除（CLEAR_FEATURE）</text>
+<rect x="510" y="628" width="460" height="48" rx="6" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="524" y="658" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">没回应</text>
+<text x="610" y="649" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">包坏了被丢弃</text>
+<text x="610" y="667" font-size="12" text-anchor="start" fill="#4b5563">主机重试，同一事务连续错 3 次才放弃</text>
+</svg>

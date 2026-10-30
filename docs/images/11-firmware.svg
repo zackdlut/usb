@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Noto Serif CJK SC, sans-serif" font-size="14">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f46e5"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker></defs>
+<rect width="1000" height="660" fill="#ffffff"/>
+<text x="500" y="32" font-size="20" text-anchor="middle" fill="#111827" font-weight="bold">STM32 + TinyUSB：同样的协议，换成真的硬件</text>
+<text x="30" y="66" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">① 固件里的数据流（左）和你在模拟器里写过的对应物（右）</text>
+<rect x="40" y="80" width="470" height="52" rx="6" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="52" y="101" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">USB 控制器硬件（F407：DWC2 · F103：FSDEV）</text>
+<text x="52" y="121" font-size="11" text-anchor="start" fill="#4b5563">NRZI、位填充、CRC、PID、ACK/NAK、数据翻转：全部硬件完成</text>
+<line x1="275.0" y1="132" x2="275.0" y2="142" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="516" y1="106" x2="556" y2="106" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="560" y="88" width="220" height="36" rx="18" fill="#ffffff" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="670" y="111" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">第 2–4 章：signal / crc / packet</text>
+<rect x="40" y="142" width="470" height="52" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="52" y="163" font-size="13" text-anchor="start" fill="#b91c1c" font-weight="bold">中断：OTG_FS_IRQHandler / USB_LP_CAN1_RX0_IRQHandler</text>
+<text x="52" y="183" font-size="11" text-anchor="start" fill="#4b5563">tud_int_handler(0)：只把事件放进队列，马上返回</text>
+<line x1="275.0" y1="194" x2="275.0" y2="204" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="516" y1="168" x2="556" y2="168" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="560" y="150" width="220" height="36" rx="18" fill="#ffffff" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="670" y="173" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">Bus::host_send → on_packet</text>
+<rect x="40" y="204" width="470" height="52" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="52" y="225" font-size="13" text-anchor="start" fill="#3730a3" font-weight="bold">主循环里的 tud_task()（usbd.c）</text>
+<text x="52" y="245" font-size="11" text-anchor="start" fill="#4b5563">处理复位、SETUP、传输完成；标准请求自己回答</text>
+<line x1="275.0" y1="256" x2="275.0" y2="266" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="516" y1="230" x2="556" y2="230" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="560" y="212" width="220" height="36" rx="18" fill="#ffffff" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="670" y="235" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">Device::on_setup / standard_request</text>
+<rect x="40" y="266" width="470" height="52" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="52" y="287" font-size="13" text-anchor="start" fill="#b45309" font-weight="bold">描述符回调 tud_descriptor_*_cb</text>
+<text x="52" y="307" font-size="11" text-anchor="start" fill="#4b5563">GET_DESCRIPTOR 时被调用，返回 Flash 里的数组</text>
+<line x1="275.0" y1="318" x2="275.0" y2="328" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="516" y1="292" x2="556" y2="292" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="560" y="274" width="220" height="36" rx="18" fill="#ffffff" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="670" y="297" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">构造函数里传入的描述符</text>
+<rect x="40" y="328" width="470" height="52" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="52" y="349" font-size="13" text-anchor="start" fill="#c2410c" font-weight="bold">tud_vendor_control_xfer_cb</text>
+<text x="52" y="369" font-size="11" text-anchor="start" fill="#4b5563">厂商请求：GET_INFO / SET_LED，返回 false = STALL</text>
+<line x1="275.0" y1="380" x2="275.0" y2="390" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="516" y1="354" x2="556" y2="354" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="560" y="336" width="220" height="36" rx="18" fill="#ffffff" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="670" y="359" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">on_vendor_request</text>
+<rect x="40" y="390" width="470" height="52" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="52" y="411" font-size="13" text-anchor="start" fill="#15803d" font-weight="bold">vendor 类 FIFO + loopback_task()</text>
+<text x="52" y="431" font-size="11" text-anchor="start" fill="#4b5563">tud_vendor_read / write：批量端点的数据</text>
+<line x1="516" y1="416" x2="556" y2="416" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="560" y="398" width="220" height="36" rx="18" fill="#ffffff" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="670" y="421" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">Device::read / write / task</text>
+<text x="40" y="460" font-size="12" text-anchor="start" fill="#b91c1c" font-weight="bold">中断里不做协议处理：USB 回调都在 tud_task() 的上下文里执行，所以回调里可以放心地 printf，但不能长时间阻塞。</text>
+<rect x="800" y="80" width="180" height="362" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="890" y="104" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">调试时看什么</text>
+<text x="814" y="132" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">LED 慢闪</text>
+<text x="814" y="158" font-size="12" text-anchor="start" fill="#4b5563">= 还没枚举成功</text>
+<text x="814" y="184" font-size="12" text-anchor="start" fill="#4b5563"></text>
+<text x="814" y="210" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">串口日志</text>
+<text x="814" y="236" font-size="12" text-anchor="start" fill="#4b5563">usb: 等待主机</text>
+<text x="814" y="262" font-size="12" text-anchor="start" fill="#4b5563">usb: SET_CONFIG… 枚举完成</text>
+<text x="814" y="288" font-size="12" text-anchor="start" fill="#4b5563">vendor: SET_LED on</text>
+<text x="814" y="314" font-size="12" text-anchor="start" fill="#4b5563"></text>
+<text x="814" y="340" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">主机侧</text>
+<text x="814" y="366" font-size="12" text-anchor="start" fill="#4b5563">dmesg / lsusb_lite</text>
+<text x="814" y="392" font-size="12" text-anchor="start" fill="#4b5563">vendor_client info</text>
+<line x1="20" y1="478" x2="980" y2="478" stroke="#e5e7eb" stroke-width="2"/>
+<text x="30" y="502" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">② 接线：两根线，一根烧录 + 看日志，一根是被测的 USB</text>
+<rect x="30" y="514" width="460" height="130" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+<text x="44" y="536" font-size="14" text-anchor="start" fill="#3730a3" font-weight="bold">STM32F4 Discovery（make）</text>
+<text x="44" y="560" font-size="12" text-anchor="start" fill="#374151">被测 USB：micro-USB 口 CN5 → OTG_FS（PA11 D−，PA12 D+，PA9 VBUS）</text>
+<text x="44" y="580" font-size="12" text-anchor="start" fill="#374151">烧录：mini-USB 口（板载 ST-LINK）</text>
+<text x="44" y="600" font-size="12" text-anchor="start" fill="#374151">日志：USART2 TX = PA2 → USB-TTL 的 RXD，115200 8N1</text>
+<text x="44" y="620" font-size="12" text-anchor="start" fill="#374151">时钟：HSE 8 MHz → PLL：168 MHz 系统、Q = 48 MHz 给 USB</text>
+<text x="44" y="640" font-size="12" text-anchor="start" fill="#374151">LED：橙色 PD13</text>
+<rect x="510" y="514" width="460" height="130" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="524" y="536" font-size="14" text-anchor="start" fill="#15803d" font-weight="bold">立创·地阔星 STM32F103C8T6（make BOARD=dkx）</text>
+<text x="524" y="560" font-size="12" text-anchor="start" fill="#374151">被测 USB：板载 USB 口（PA11 D−，PA12 D+，板上 1.5k 上拉）</text>
+<text x="524" y="580" font-size="12" text-anchor="start" fill="#374151">烧录：SWD 排针接 ST-LINK / DAP-Link</text>
+<text x="524" y="600" font-size="12" text-anchor="start" fill="#374151">日志：USART1 TX = PA9 → USB-TTL 的 RXD，115200 8N1</text>
+<text x="524" y="620" font-size="12" text-anchor="start" fill="#374151">时钟：HSE 8 MHz × 9 = 72 MHz，USB = 72 / 1.5 = 48 MHz</text>
+<text x="524" y="640" font-size="12" text-anchor="start" fill="#374151">LED：PC13；启动时 PA12 拉低 10 ms 强制重新枚举</text>
+</svg>

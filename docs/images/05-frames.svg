@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Noto Serif CJK SC, sans-serif" font-size="14">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f46e5"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker></defs>
+<rect width="1000" height="640" fill="#ffffff"/>
+<text x="500" y="32" font-size="20" text-anchor="middle" fill="#111827" font-weight="bold">四种传输类型，分享同一条总线的每一毫秒</text>
+<rect x="20" y="54" width="230" height="196" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+<text x="135" y="82" font-size="16" text-anchor="middle" fill="#3730a3" font-weight="bold">控制 Control</text>
+<text x="38" y="112" font-size="13" text-anchor="start" fill="#374151">• 端点 0，每个设备都有</text>
+<text x="38" y="140" font-size="13" text-anchor="start" fill="#374151">• SETUP → 数据 → 状态</text>
+<text x="38" y="168" font-size="13" text-anchor="start" fill="#374151">• 保证送达，有重试</text>
+<text x="38" y="196" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">★ 枚举、配置、厂商命令</text>
+<text x="38" y="224" font-size="13" text-anchor="start" fill="#374151">• 包长 8/16/32/64</text>
+<rect x="265" y="54" width="230" height="196" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="380" y="82" font-size="16" text-anchor="middle" fill="#15803d" font-weight="bold">批量 Bulk</text>
+<text x="283" y="112" font-size="13" text-anchor="start" fill="#374151">• 保证送达，有重试</text>
+<text x="283" y="140" font-size="13" text-anchor="start" fill="#374151">• 没有带宽保证：捡空闲</text>
+<text x="283" y="168" font-size="13" text-anchor="start" fill="#374151">• 总线空时最快</text>
+<text x="283" y="196" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">★ U 盘、串口、打印机</text>
+<text x="283" y="224" font-size="13" text-anchor="start" fill="#374151">• 包长 8/16/32/64</text>
+<rect x="510" y="54" width="230" height="196" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<text x="625" y="82" font-size="16" text-anchor="middle" fill="#b45309" font-weight="bold">中断 Interrupt</text>
+<text x="528" y="112" font-size="13" text-anchor="start" fill="#374151">• 保证送达，有重试</text>
+<text x="528" y="140" font-size="13" text-anchor="start" fill="#374151">• 主机每 bInterval 轮询一次</text>
+<text x="528" y="168" font-size="13" text-anchor="start" fill="#374151">• 延迟有上限</text>
+<text x="528" y="196" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">★ 键盘、鼠标、手柄</text>
+<text x="528" y="224" font-size="13" text-anchor="start" fill="#374151">• 包长 ≤ 64</text>
+<rect x="755" y="54" width="230" height="196" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+<text x="870" y="82" font-size="16" text-anchor="middle" fill="#c2410c" font-weight="bold">同步 Isochronous</text>
+<text x="773" y="112" font-size="13" text-anchor="start" fill="#374151">• 不保证送达，不重试</text>
+<text x="773" y="140" font-size="13" text-anchor="start" fill="#374151">• 每帧预留固定带宽</text>
+<text x="773" y="168" font-size="13" text-anchor="start" fill="#374151">• 没有握手、没有翻转</text>
+<text x="773" y="196" font-size="13" text-anchor="start" fill="#111827" font-weight="bold">★ 音频、视频</text>
+<text x="773" y="224" font-size="13" text-anchor="start" fill="#374151">• 包长 ≤ 1023</text>
+<text x="20" y="280" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">一帧 = 1 ms ≈ 1500 字节总线时间（全速）。主机按“周期性优先”的规则排队：</text>
+<text x="98" y="336" font-size="14" text-anchor="end" fill="#374151" font-weight="bold">帧 N</text>
+<rect x="110" y="310" width="840" height="40" rx="3" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+<rect x="110" y="310" width="2.8000000000000003" height="40" rx="3" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<rect x="112.8" y="310" width="11.760000000000002" height="40" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<rect x="124.56" y="310" width="112.56000000000002" height="40" rx="3" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="180.84" y="335.0" font-size="12" text-anchor="middle" fill="#c2410c" font-weight="bold">音频 192B</text>
+<rect x="237.12" y="310" width="689.9200000000001" height="40" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="582.08" y="335.0" font-size="12" text-anchor="middle" fill="#15803d" font-weight="bold">U 盘：16 个 64 字节批量包</text>
+<text x="98" y="396" font-size="14" text-anchor="end" fill="#374151" font-weight="bold">帧 N+1</text>
+<rect x="110" y="370" width="840" height="40" rx="3" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+<rect x="110" y="370" width="2.8000000000000003" height="40" rx="3" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<rect x="112.8" y="370" width="112.56000000000002" height="40" rx="3" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="169.08" y="395.0" font-size="12" text-anchor="middle" fill="#c2410c" font-weight="bold">音频 192B</text>
+<rect x="225.36" y="370" width="689.9200000000001" height="40" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="570.32" y="395.0" font-size="12" text-anchor="middle" fill="#15803d" font-weight="bold">U 盘：16 个 64 字节批量包</text>
+<text x="98" y="456" font-size="14" text-anchor="end" fill="#374151" font-weight="bold">帧 N+2</text>
+<rect x="110" y="430" width="840" height="40" rx="3" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+<rect x="110" y="430" width="2.8000000000000003" height="40" rx="3" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<rect x="112.8" y="430" width="112.56000000000002" height="40" rx="3" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="169.08" y="455.0" font-size="12" text-anchor="middle" fill="#c2410c" font-weight="bold">音频 192B</text>
+<rect x="225.36" y="430" width="258.72" height="40" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="354.72" y="455.0" font-size="12" text-anchor="middle" fill="#15803d" font-weight="bold">U 盘 6 包</text>
+<text x="494.08000000000004" y="455" font-size="12" text-anchor="start" fill="#6b7280">U 盘这会儿没数据可写：剩下的时间空闲</text>
+<path d="M110,304 L110,298 L237.12,298 L237.12,304" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="243.12" y="302" font-size="12" text-anchor="start" fill="#b91c1c" font-weight="bold">← SOF + 周期性部分：配置时预留，总量必须 ≤ 90%（1350 字节）</text>
+<text x="110" y="512" font-size="12" text-anchor="start" fill="#4b5563">S = SOF 包　键 = 键盘的中断事务（8 字节，每 4 帧一次）　音频 = 音箱的同步事务（每帧一次）　绿色 = U 盘的批量事务</text>
+<text x="20" y="552" font-size="13" text-anchor="start" fill="#374151">① 先放 SOF，再放所有到期的周期性事务（中断、同步）：它们在配置时就预留好了带宽，这一帧一定有位置。</text>
+<text x="20" y="578" font-size="13" text-anchor="start" fill="#374151">② 剩下的时间给控制和批量，有多少用多少。所以 U 盘插着音箱时会变慢，但音箱不会卡。</text>
+<text x="20" y="604" font-size="13" text-anchor="start" fill="#b91c1c" font-weight="bold">③ 预留总量超过 90% 的设备会在 SET_CONFIGURATION 时被拒绝：这就是“USB 带宽不足”。</text>
+</svg>

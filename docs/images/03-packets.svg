@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Noto Serif CJK SC, sans-serif" font-size="14">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f46e5"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker></defs>
+<rect width="1000" height="660" fill="#ffffff"/>
+<text x="500" y="32" font-size="20" text-anchor="middle" fill="#111827" font-weight="bold">四类包：每个包都是 SYNC + PID + 内容 + EOP</text>
+<text x="30" y="84" font-size="15" text-anchor="start" fill="#111827" font-weight="bold">令牌包</text>
+<text x="30" y="104" font-size="11" text-anchor="start" fill="#6b7280">OUT / IN / SETUP</text>
+<rect x="190" y="68" width="86" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="233.0" y="86" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">SYNC</text>
+<text x="233.0" y="102" font-size="11" text-anchor="middle" fill="#374151">8 位</text>
+<rect x="280" y="68" width="86" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="323.0" y="86" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">PID</text>
+<text x="323.0" y="102" font-size="11" text-anchor="middle" fill="#c2410c">8 位</text>
+<rect x="370" y="68" width="77" height="40" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="408.5" y="86" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">ADDR</text>
+<text x="408.5" y="102" font-size="11" text-anchor="middle" fill="#3730a3">7 位</text>
+<rect x="451" y="68" width="50" height="40" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="476.0" y="86" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">ENDP</text>
+<text x="476.0" y="102" font-size="11" text-anchor="middle" fill="#3730a3">4 位</text>
+<rect x="505" y="68" width="59" height="40" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="534.5" y="86" font-size="13" text-anchor="middle" fill="#b91c1c" font-weight="bold">CRC5</text>
+<text x="534.5" y="102" font-size="11" text-anchor="middle" fill="#b91c1c">5 位</text>
+<rect x="568" y="68" width="41" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="588.5" y="86" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">EOP</text>
+<text x="588.5" y="102" font-size="11" text-anchor="middle" fill="#374151">3 位</text>
+<text x="623" y="94" font-size="12" text-anchor="start" fill="#4b5563">“下一个包发给地址 X 的端点 Y”</text>
+<text x="30" y="148" font-size="15" text-anchor="start" fill="#111827" font-weight="bold">SOF 包</text>
+<text x="30" y="168" font-size="11" text-anchor="start" fill="#6b7280">每 1 ms 一个</text>
+<rect x="190" y="132" width="86" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="233.0" y="150" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">SYNC</text>
+<text x="233.0" y="166" font-size="11" text-anchor="middle" fill="#374151">8 位</text>
+<rect x="280" y="132" width="86" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="323.0" y="150" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">PID</text>
+<text x="323.0" y="166" font-size="11" text-anchor="middle" fill="#c2410c">8 位</text>
+<rect x="370" y="132" width="113" height="40" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="426.5" y="150" font-size="13" text-anchor="middle" fill="#b45309" font-weight="bold">帧号</text>
+<text x="426.5" y="166" font-size="11" text-anchor="middle" fill="#b45309">11 位</text>
+<rect x="487" y="132" width="59" height="40" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="516.5" y="150" font-size="13" text-anchor="middle" fill="#b91c1c" font-weight="bold">CRC5</text>
+<text x="516.5" y="166" font-size="11" text-anchor="middle" fill="#b91c1c">5 位</text>
+<rect x="550" y="132" width="41" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="570.5" y="150" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">EOP</text>
+<text x="570.5" y="166" font-size="11" text-anchor="middle" fill="#374151">3 位</text>
+<text x="605" y="158" font-size="12" text-anchor="start" fill="#4b5563">帧号 0–2047 循环</text>
+<text x="30" y="212" font-size="15" text-anchor="start" fill="#111827" font-weight="bold">数据包</text>
+<text x="30" y="232" font-size="11" text-anchor="start" fill="#6b7280">DATA0 / DATA1</text>
+<rect x="190" y="196" width="86" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="233.0" y="214" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">SYNC</text>
+<text x="233.0" y="230" font-size="11" text-anchor="middle" fill="#374151">8 位</text>
+<rect x="280" y="196" width="86" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="323.0" y="214" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">PID</text>
+<text x="323.0" y="230" font-size="11" text-anchor="middle" fill="#c2410c">8 位</text>
+<rect x="370" y="196" width="130" height="40" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="435.0" y="214" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">数据</text>
+<text x="435.0" y="230" font-size="11" text-anchor="middle" fill="#15803d">N 字节</text>
+<rect x="504" y="196" width="158" height="40" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="583.0" y="214" font-size="13" text-anchor="middle" fill="#b91c1c" font-weight="bold">CRC16</text>
+<text x="583.0" y="230" font-size="11" text-anchor="middle" fill="#b91c1c">16 位</text>
+<rect x="666" y="196" width="41" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="686.5" y="214" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">EOP</text>
+<text x="686.5" y="230" font-size="11" text-anchor="middle" fill="#374151">3 位</text>
+<text x="721" y="222" font-size="12" text-anchor="start" fill="#4b5563">负载 0–1023 字节（全速批量 ≤64）</text>
+<text x="30" y="276" font-size="15" text-anchor="start" fill="#111827" font-weight="bold">握手包</text>
+<text x="30" y="296" font-size="11" text-anchor="start" fill="#6b7280">ACK / NAK / STALL</text>
+<rect x="190" y="260" width="86" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="233.0" y="278" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">SYNC</text>
+<text x="233.0" y="294" font-size="11" text-anchor="middle" fill="#374151">8 位</text>
+<rect x="280" y="260" width="86" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="323.0" y="278" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">PID</text>
+<text x="323.0" y="294" font-size="11" text-anchor="middle" fill="#c2410c">8 位</text>
+<rect x="370" y="260" width="41" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="390.5" y="278" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">EOP</text>
+<text x="390.5" y="294" font-size="11" text-anchor="middle" fill="#374151">3 位</text>
+<text x="425" y="286" font-size="12" text-anchor="start" fill="#4b5563">只有 1 个字节</text>
+<line x1="30" y1="318" x2="970" y2="318" stroke="#e5e7eb" stroke-width="2"/>
+<text x="250" y="346" font-size="15" text-anchor="middle" fill="#374151" font-weight="bold">PID 字节：低 4 位是类型，高 4 位是它的反码</text>
+<rect x="40" y="362" width="48" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="64" y="387" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold" font-family="monospace">P0</text>
+<rect x="92" y="362" width="48" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="116" y="387" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold" font-family="monospace">P1</text>
+<rect x="144" y="362" width="48" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="168" y="387" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold" font-family="monospace">P2</text>
+<rect x="196" y="362" width="48" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="220" y="387" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold" font-family="monospace">P3</text>
+<rect x="248" y="362" width="48" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="272" y="387" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold" font-family="monospace">~P0</text>
+<rect x="300" y="362" width="48" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="324" y="387" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold" font-family="monospace">~P1</text>
+<rect x="352" y="362" width="48" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="376" y="387" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold" font-family="monospace">~P2</text>
+<rect x="404" y="362" width="48" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="428" y="387" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold" font-family="monospace">~P3</text>
+<text x="40" y="422" font-size="12" text-anchor="start" fill="#6b7280">← bit0 最先上线</text>
+<text x="450" y="422" font-size="12" text-anchor="end" fill="#6b7280">错一位必然发现</text>
+<text x="40" y="452" font-size="13" text-anchor="start" fill="#111827">例：ACK 类型 = 0010，反码 1101 → 字节 0xD2</text>
+<text x="40" y="476" font-size="13" text-anchor="start" fill="#111827">例：SETUP 类型 = 1101，反码 0010 → 字节 0x2D</text>
+<text x="40" y="500" font-size="13" text-anchor="start" fill="#c2410c" font-weight="bold">最低两位就是大类：01 令牌 · 11 数据 · 10 握手 · 00 特殊</text>
+<line x1="480" y1="326" x2="480" y2="640" stroke="#e5e7eb" stroke-width="2"/>
+<rect x="500" y="334" width="110" height="32" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="555" y="355" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">令牌 xx01</text>
+<text x="508" y="392" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">OUT</text>
+<text x="602" y="392" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">0001</text>
+<text x="508" y="418" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">IN</text>
+<text x="602" y="418" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">1001</text>
+<text x="508" y="444" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">SOF</text>
+<text x="602" y="444" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">0101</text>
+<text x="508" y="470" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">SETUP</text>
+<text x="602" y="470" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">1101</text>
+<rect x="618" y="334" width="110" height="32" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="673" y="355" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">数据 xx11</text>
+<text x="626" y="392" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">DATA0</text>
+<text x="720" y="392" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">0011</text>
+<text x="626" y="418" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">DATA1</text>
+<text x="720" y="418" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">1011</text>
+<text x="626" y="444" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">DATA2</text>
+<text x="720" y="444" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">0111</text>
+<text x="626" y="470" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">MDATA</text>
+<text x="720" y="470" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">1111</text>
+<rect x="736" y="334" width="110" height="32" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="791" y="355" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">握手 xx10</text>
+<text x="744" y="392" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">ACK</text>
+<text x="838" y="392" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">0010</text>
+<text x="744" y="418" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">NAK</text>
+<text x="838" y="418" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">1010</text>
+<text x="744" y="444" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">STALL</text>
+<text x="838" y="444" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">1110</text>
+<text x="744" y="470" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">NYET</text>
+<text x="838" y="470" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">0110</text>
+<rect x="854" y="334" width="110" height="32" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="909" y="355" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">特殊 xx00</text>
+<text x="862" y="392" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">PRE</text>
+<text x="956" y="392" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">1100</text>
+<text x="862" y="418" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">SPLIT</text>
+<text x="956" y="418" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">1000</text>
+<text x="862" y="444" font-size="13" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">PING</text>
+<text x="956" y="444" font-size="13" text-anchor="end" fill="#6b7280" font-family="monospace">0100</text>
+<text x="500" y="506" font-size="12" text-anchor="start" fill="#4b5563">DATA2/MDATA、NYET、SPLIT、PING 只在高速或经过 Hub 时出现；</text>
+<text x="500" y="526" font-size="12" text-anchor="start" fill="#4b5563">全速设备日常只用到 OUT IN SOF SETUP DATA0 DATA1 ACK NAK STALL。</text>
+<line x1="30" y1="534" x2="470" y2="534" stroke="#e5e7eb" stroke-width="2"/>
+<text x="30" y="552" font-size="14" text-anchor="start" fill="#111827" font-weight="bold">拆一个令牌包：IN 地址 5 端点 1 = 69 85 60</text>
+<text x="30" y="578" font-size="13" text-anchor="start" fill="#374151">后两字节小端 → 0x6085 =</text>
+<rect x="196" y="562" width="67" height="24" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="229.5" y="579" font-size="13" text-anchor="middle" fill="#b91c1c" font-weight="bold" font-family="monospace">01100</text>
+<text x="229.5" y="604" font-size="11" text-anchor="middle" fill="#b91c1c">CRC5=0x0C</text>
+<rect x="267" y="562" width="56" height="24" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="295.0" y="579" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold" font-family="monospace">0001</text>
+<text x="295.0" y="604" font-size="11" text-anchor="middle" fill="#3730a3">ENDP=1</text>
+<rect x="327" y="562" width="89" height="24" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="371.5" y="579" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold" font-family="monospace">0000101</text>
+<text x="371.5" y="604" font-size="11" text-anchor="middle" fill="#3730a3">ADDR=5</text>
+<text x="30" y="630" font-size="12" text-anchor="start" fill="#6b7280">bit15 … bit0；CRC5 只覆盖 ADDR+ENDP 这 11 位</text>
+<text x="500" y="552" font-size="14" text-anchor="start" fill="#111827" font-weight="bold">接收方对每个包做的检查（任何一项不过 → 直接丢弃，不回应）</text>
+<text x="500" y="582" font-size="13" text-anchor="start" fill="#374151">① PID 高低 4 位互为反码</text>
+<text x="740" y="582" font-size="13" text-anchor="start" fill="#374151">② 令牌包 3 字节，CRC5 正确</text>
+<text x="500" y="608" font-size="13" text-anchor="start" fill="#374151">③ 数据包 CRC16 正确</text>
+<text x="740" y="608" font-size="13" text-anchor="start" fill="#374151">④ 没有位填充错误、长度是整字节</text>
+<text x="500" y="638" font-size="13" text-anchor="start" fill="#c2410c" font-weight="bold">发送方等不到握手 → 超时重发（第 4 章）</text>
+</svg>

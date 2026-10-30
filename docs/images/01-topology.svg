@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Noto Serif CJK SC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="500" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#111827">USB 全景：一个主机说了算的树，和三层“对话”</text>
+
+  <!-- left: topology -->
+  <text x="240" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#374151">① 物理拓扑：分层星形</text>
+
+  <rect x="140" y="88" width="200" height="56" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+  <text x="240" y="111" text-anchor="middle" font-weight="bold" fill="#3730a3">PC 主机</text>
+  <text x="240" y="132" text-anchor="middle" font-size="12" fill="#3730a3">主控制器 + 根 Hub</text>
+
+  <line x1="190" y1="144" x2="90" y2="214" stroke="#6b7280" stroke-width="2"/>
+  <line x1="240" y1="144" x2="240" y2="214" stroke="#6b7280" stroke-width="2"/>
+  <line x1="290" y1="144" x2="390" y2="214" stroke="#6b7280" stroke-width="2"/>
+
+  <rect x="30" y="214" width="120" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="90" y="241" text-anchor="middle" fill="#15803d">键盘</text>
+  <rect x="180" y="214" width="120" height="44" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="240" y="241" text-anchor="middle" fill="#b45309">Hub 集线器</text>
+  <rect x="330" y="214" width="120" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="390" y="241" text-anchor="middle" fill="#15803d">U 盘</text>
+
+  <line x1="215" y1="258" x2="150" y2="318" stroke="#6b7280" stroke-width="2"/>
+  <line x1="265" y1="258" x2="330" y2="318" stroke="#6b7280" stroke-width="2"/>
+  <rect x="90" y="318" width="120" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="150" y="345" text-anchor="middle" fill="#15803d">鼠标</text>
+  <rect x="270" y="318" width="120" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="330" y="345" text-anchor="middle" fill="#15803d">你的 STM32</text>
+
+  <g font-size="13" fill="#374151">
+    <text x="30" y="400">• 只有一个主机，所有传输都由主机发起</text>
+    <text x="30" y="424">• 设备从不主动说话，只能被“点名”后回答</text>
+    <text x="30" y="448">• 每个设备一个 7 位地址：最多 127 个</text>
+    <text x="30" y="472">• 最多 7 层（含根 Hub），设备之间不能直连</text>
+    <text x="30" y="496">• 4 根线：VBUS 5V、GND、D+、D-（差分数据）</text>
+  </g>
+
+  <rect x="30" y="516" width="420" height="64" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="44" y="540" font-size="13" fill="#111827">速度：低速 1.5 Mbit/s（键盘鼠标）· 全速 12 Mbit/s</text>
+  <text x="44" y="562" font-size="13" fill="#111827">高速 480 Mbit/s · 超速 5 Gbit/s+（USB 3.x）</text>
+
+  <line x1="480" y1="60" x2="480" y2="580" stroke="#e5e7eb" stroke-width="2"/>
+
+  <!-- right: layers -->
+  <text x="740" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#374151">② 逻辑分层：每层只和对面同一层“对话”</text>
+
+  <text x="600" y="100" text-anchor="middle" font-weight="bold" fill="#3730a3">主机</text>
+  <text x="880" y="100" text-anchor="middle" font-weight="bold" fill="#15803d">设备</text>
+
+  <rect x="510" y="116" width="180" height="64" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+  <text x="600" y="142" text-anchor="middle" fill="#3730a3">应用程序 / 类驱动</text>
+  <text x="600" y="164" text-anchor="middle" font-size="12" fill="#3730a3">“读一个按键报告”</text>
+  <rect x="790" y="116" width="180" height="64" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="880" y="142" text-anchor="middle" fill="#15803d">功能（接口、端点）</text>
+  <text x="880" y="164" text-anchor="middle" font-size="12" fill="#15803d">键盘、串口、U 盘……</text>
+  <line x1="692" y1="148" x2="788" y2="148" stroke="#ea580c" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+  <text x="740" y="140" text-anchor="middle" font-size="12" fill="#c2410c">管道 pipe</text>
+
+  <rect x="510" y="216" width="180" height="64" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+  <text x="600" y="242" text-anchor="middle" fill="#3730a3">USB 核心驱动</text>
+  <text x="600" y="264" text-anchor="middle" font-size="12" fill="#3730a3">枚举、分配地址</text>
+  <rect x="790" y="216" width="180" height="64" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="880" y="242" text-anchor="middle" fill="#15803d">USB 设备层</text>
+  <text x="880" y="264" text-anchor="middle" font-size="12" fill="#15803d">端点 0、描述符、状态</text>
+  <line x1="692" y1="248" x2="788" y2="248" stroke="#ea580c" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+  <text x="740" y="240" text-anchor="middle" font-size="12" fill="#c2410c">控制管道</text>
+
+  <rect x="510" y="316" width="180" height="64" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+  <text x="600" y="342" text-anchor="middle" fill="#3730a3">主控制器 xHCI</text>
+  <text x="600" y="364" text-anchor="middle" font-size="12" fill="#3730a3">事务、重试、调度</text>
+  <rect x="790" y="316" width="180" height="64" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="880" y="342" text-anchor="middle" fill="#15803d">USB 控制器 + PHY</text>
+  <text x="880" y="364" text-anchor="middle" font-size="12" fill="#15803d">STM32 的 OTG_FS</text>
+
+  <line x1="600" y1="180" x2="600" y2="214" stroke="#4f46e5" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="600" y1="280" x2="600" y2="314" stroke="#4f46e5" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="880" y1="214" x2="880" y2="182" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="880" y1="314" x2="880" y2="282" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <path d="M600,380 L600,420 L880,420 L880,382" fill="none" stroke="#111827" stroke-width="4"/>
+  <text x="740" y="412" text-anchor="middle" font-size="13" font-weight="bold" fill="#111827">真正的数据只走这根线：D+ / D-</text>
+
+  <rect x="510" y="450" width="460" height="130" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="526" y="474" font-size="13" font-weight="bold" fill="#111827">本教程自底向上，一层一层搭起来：</text>
+  <text x="526" y="498" font-size="13" fill="#374151">第 2–5 章  线上的电平 → 包 → 事务 → 四种传输</text>
+  <text x="526" y="520" font-size="13" fill="#374151">第 6–7 章  描述符、控制传输、枚举（设备层）</text>
+  <text x="526" y="542" font-size="13" fill="#374151">第 8–9 章  HID 键盘、CDC 串口（功能层）</text>
+  <text x="526" y="564" font-size="13" fill="#374151">第 10–12 章 真实的 PC（libusb）和真实的 STM32</text>
+</svg>

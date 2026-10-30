@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Noto Serif CJK SC, sans-serif" font-size="14">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f46e5"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker></defs>
+<rect width="1000" height="660" fill="#ffffff"/>
+<text x="500" y="32" font-size="20" text-anchor="middle" fill="#111827" font-weight="bold">libusb：应用程序直接和 USB 设备对话</text>
+<text x="250" y="66" font-size="15" text-anchor="middle" fill="#374151" font-weight="bold">① Linux 上的两条路</text>
+<text x="140" y="92" font-size="12" text-anchor="middle" fill="#6b7280" font-weight="bold">厂商自定义设备（类 0xFF）</text>
+<rect x="40" y="100" width="200" height="44" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="140.0" y="120.0" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">你的程序 vendor_client</text>
+<text x="140.0" y="137.0" font-size="11" text-anchor="middle" fill="#4b5563">用户态</text>
+<rect x="40" y="156" width="200" height="44" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="140.0" y="176.0" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">libusb</text>
+<text x="140.0" y="193.0" font-size="11" text-anchor="middle" fill="#4b5563">libusb_control/bulk_transfer</text>
+<rect x="40" y="212" width="200" height="44" rx="6" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="140.0" y="232.0" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">usbfs</text>
+<text x="140.0" y="249.0" font-size="11" text-anchor="middle" fill="#4b5563">/dev/bus/usb/001/005</text>
+<text x="370" y="92" font-size="12" text-anchor="middle" fill="#6b7280" font-weight="bold">标准类设备（CDC、HID……）</text>
+<rect x="270" y="100" width="200" height="44" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="370.0" y="120.0" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">终端程序 / 你的程序</text>
+<text x="370.0" y="137.0" font-size="11" text-anchor="middle" fill="#4b5563">open("/dev/ttyACM0")</text>
+<rect x="270" y="156" width="200" height="44" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="370.0" y="176.0" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">C 库</text>
+<text x="370.0" y="193.0" font-size="11" text-anchor="middle" fill="#4b5563">read() / write() / ioctl()</text>
+<rect x="270" y="212" width="200" height="44" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="370.0" y="232.0" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">类驱动</text>
+<text x="370.0" y="249.0" font-size="11" text-anchor="middle" fill="#4b5563">cdc_acm / usbhid（内核）</text>
+<line x1="20" y1="206" x2="490" y2="206" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="40" y="212" width="200" height="44" rx="6" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="140" y="230" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">usbfs</text>
+<text x="140" y="247" font-size="11" text-anchor="middle" fill="#4b5563">/dev/bus/usb/001/005</text>
+<rect x="40" y="282" width="430" height="44" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="255.0" y="302.0" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">USB 核心（枚举、地址、URB 队列）</text>
+<text x="255.0" y="319.0" font-size="11" text-anchor="middle" fill="#4b5563">第 7 章 Host::enumerate 做的事</text>
+<rect x="40" y="338" width="430" height="44" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="255.0" y="358.0" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">主机控制器驱动 xHCI</text>
+<text x="255.0" y="375.0" font-size="11" text-anchor="middle" fill="#4b5563">第 4、5 章：事务、重试、调度</text>
+<rect x="40" y="394" width="430" height="34" rx="6" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="255.0" y="416.0" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">D+ / D− → 你的 STM32</text>
+<line x1="140" y1="144" x2="140" y2="156" stroke="#6b7280" stroke-width="2"/>
+<line x1="140" y1="200" x2="140" y2="212" stroke="#6b7280" stroke-width="2"/>
+<line x1="140" y1="256" x2="140" y2="282" stroke="#6b7280" stroke-width="2"/>
+<line x1="370" y1="144" x2="370" y2="156" stroke="#6b7280" stroke-width="2"/>
+<line x1="370" y1="200" x2="370" y2="212" stroke="#6b7280" stroke-width="2"/>
+<line x1="370" y1="256" x2="370" y2="282" stroke="#6b7280" stroke-width="2"/>
+<line x1="255" y1="326" x2="255" y2="338" stroke="#6b7280" stroke-width="2"/>
+<line x1="255" y1="382" x2="255" y2="394" stroke="#6b7280" stroke-width="2"/>
+<text x="40" y="450" font-size="12" text-anchor="start" fill="#374151">• 灰色虚线以上是用户态程序，以下在内核里。</text>
+<text x="40" y="472" font-size="12" text-anchor="start" fill="#374151">• 同一个接口同一时刻只能有一个“主人”：被 cdc_acm 占着时，libusb 要先</text>
+<text x="40" y="490" font-size="12" text-anchor="start" fill="#374151">  detach 内核驱动才能 claim（代码里的 libusb_set_auto_detach_kernel_driver）。</text>
+<text x="40" y="512" font-size="12" text-anchor="start" fill="#374151">• /dev/bus/usb 默认只有 root 可写：用 udev 规则给普通用户权限。</text>
+<line x1="510" y1="56" x2="510" y2="500" stroke="#e5e7eb" stroke-width="2"/>
+<text x="750" y="66" font-size="15" text-anchor="middle" fill="#374151" font-weight="bold">② WSL2 里怎么看到 USB 设备</text>
+<rect x="530" y="82" width="440" height="196" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="546" y="104" font-size="13" text-anchor="start" fill="#1d4ed8" font-weight="bold">Windows</text>
+<rect x="550" y="114" width="400" height="40" rx="6" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="750.0" y="139.0" font-size="13" text-anchor="middle" fill="#374151" font-weight="bold">STM32 插在 Windows 的 USB 口上</text>
+<rect x="550" y="166" width="400" height="44" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="750.0" y="186.0" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">usbipd-win（服务）</text>
+<text x="750.0" y="203.0" font-size="11" text-anchor="middle" fill="#4b5563">usbipd bind / attach --wsl：把设备从 Windows 摘下来</text>
+<rect x="550" y="222" width="400" height="44" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="750.0" y="242.0" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">USB/IP 协议：把每个 URB 打包成网络消息</text>
+<text x="750.0" y="259.0" font-size="11" text-anchor="middle" fill="#4b5563">走 Windows ↔ WSL 的虚拟网卡</text>
+<rect x="530" y="292" width="440" height="196" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="546" y="314" font-size="13" text-anchor="start" fill="#15803d" font-weight="bold">WSL2（Linux 内核）</text>
+<rect x="550" y="324" width="400" height="44" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="750.0" y="344.0" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">vhci_hcd：虚拟主机控制器</text>
+<text x="750.0" y="361.0" font-size="11" text-anchor="middle" fill="#4b5563">对 USB 核心来说它就是一个普通的主机控制器</text>
+<rect x="550" y="380" width="400" height="40" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="750.0" y="405.0" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">USB 核心 → usbfs / cdc_acm</text>
+<rect x="550" y="432" width="400" height="40" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="750.0" y="457.0" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">libusb → lsusb_lite / vendor_client</text>
+<line x1="750" y1="154" x2="750" y2="166" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="750" y1="210" x2="750" y2="222" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="750" y1="266" x2="750" y2="324" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="750" y1="368" x2="750" y2="380" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="750" y1="420" x2="750" y2="432" stroke="#6b7280" stroke-width="2" marker-end="url(#ah)"/>
+<text x="530" y="506" font-size="12" text-anchor="start" fill="#b91c1c" font-weight="bold">WSL2 内核没有 usbmon，抓包要在 Windows 上用 USBPcap（第 12 章）。</text>
+<line x1="20" y1="524" x2="980" y2="524" stroke="#e5e7eb" stroke-width="2"/>
+<text x="30" y="548" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">③ libusb 的函数和前面各章一一对应</text>
+<text x="30" y="572" font-size="12" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">libusb_control_transfer(h, 0xC0, req, wValue, wIndex, buf, len, ms)</text>
+<text x="560" y="572" font-size="12" text-anchor="start" fill="#4b5563">= 第 7 章的 control_in：建立、数据、状态三个阶段</text>
+<text x="30" y="598" font-size="12" text-anchor="start" fill="#111827" font-weight="bold" font-family="monospace">libusb_bulk_transfer(h, 0x81, buf, len, &amp;n, ms)</text>
+<text x="560" y="598" font-size="12" text-anchor="start" fill="#4b5563">= 第 5 章的 bulk_in：一直 IN 到短包或读满</text>
+<text x="30" y="624" font-size="12" text-anchor="start" fill="#111827" font-weight="bold">返回 LIBUSB_ERROR_PIPE / TIMEOUT / IO</text>
+<text x="560" y="624" font-size="12" text-anchor="start" fill="#4b5563">= STALL / 一直 NAK 或缺 ZLP / 连续 3 次出错</text>
+</svg>

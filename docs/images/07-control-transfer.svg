@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Noto Serif CJK SC, sans-serif" font-size="14">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f46e5"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker></defs>
+<rect width="1000" height="640" fill="#ffffff"/>
+<text x="500" y="32" font-size="20" text-anchor="middle" fill="#111827" font-weight="bold">控制传输：8 字节的 SETUP 请求 + 三个阶段</text>
+<text x="30" y="66" font-size="14" text-anchor="start" fill="#374151" font-weight="bold">SETUP 数据包的 8 个字节（例：80 06 00 01 00 00 40 00 = 把设备描述符给我，最多 64 字节）</text>
+<rect x="30" y="80" width="108" height="62" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="84.0" y="100" font-size="12" text-anchor="middle" fill="#c2410c" font-weight="bold" font-family="monospace">bmRequestType</text>
+<text x="84.0" y="119" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">80</text>
+<text x="84.0" y="136" font-size="11" text-anchor="middle" fill="#4b5563">方向/类型/接收者</text>
+<rect x="142" y="80" width="108" height="62" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="196.0" y="100" font-size="12" text-anchor="middle" fill="#3730a3" font-weight="bold" font-family="monospace">bRequest</text>
+<text x="196.0" y="119" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">06</text>
+<text x="196.0" y="136" font-size="11" text-anchor="middle" fill="#4b5563">GET_DESCRIPTOR</text>
+<rect x="254" y="80" width="220" height="62" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="364.0" y="100" font-size="12" text-anchor="middle" fill="#15803d" font-weight="bold" font-family="monospace">wValue</text>
+<text x="364.0" y="119" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">00 01</text>
+<text x="364.0" y="136" font-size="11" text-anchor="middle" fill="#4b5563">类型 1 = 设备，序号 0</text>
+<rect x="478" y="80" width="220" height="62" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="588.0" y="100" font-size="12" text-anchor="middle" fill="#b45309" font-weight="bold" font-family="monospace">wIndex</text>
+<text x="588.0" y="119" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">00 00</text>
+<text x="588.0" y="136" font-size="11" text-anchor="middle" fill="#4b5563">0（语言/接口/端点）</text>
+<rect x="702" y="80" width="220" height="62" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="812.0" y="100" font-size="12" text-anchor="middle" fill="#b91c1c" font-weight="bold" font-family="monospace">wLength</text>
+<text x="812.0" y="119" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">40 00</text>
+<text x="812.0" y="136" font-size="11" text-anchor="middle" fill="#4b5563">最多要 64 字节</text>
+<text x="30" y="170" font-size="13" text-anchor="start" fill="#c2410c" font-weight="bold">bmRequestType 的 8 位：</text>
+<rect x="190" y="154" width="170" height="50" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.2"/>
+<text x="275.0" y="172" font-size="12" text-anchor="middle" fill="#c2410c" font-weight="bold">D7 方向</text>
+<text x="275.0" y="192" font-size="11" text-anchor="middle" fill="#374151">0 主机→设备  1 设备→主机</text>
+<rect x="366" y="154" width="170" height="50" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.2"/>
+<text x="451.0" y="172" font-size="12" text-anchor="middle" fill="#c2410c" font-weight="bold">D6..5 类型</text>
+<text x="451.0" y="192" font-size="11" text-anchor="middle" fill="#374151">0 标准  1 类  2 厂商</text>
+<rect x="542" y="154" width="170" height="50" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.2"/>
+<text x="627.0" y="172" font-size="12" text-anchor="middle" fill="#c2410c" font-weight="bold">D4..0 接收者</text>
+<text x="627.0" y="192" font-size="11" text-anchor="middle" fill="#374151">0 设备  1 接口  2 端点</text>
+<text x="728" y="172" font-size="12" text-anchor="start" fill="#111827" font-weight="bold">0x80 = 设备→主机 · 标准 · 设备</text>
+<text x="728" y="192" font-size="12" text-anchor="start" fill="#111827">0x40 = 主机→设备 · 厂商 · 设备</text>
+<line x1="20" y1="222" x2="980" y2="222" stroke="#e5e7eb" stroke-width="2"/>
+<text x="30" y="294" font-size="15" text-anchor="start" fill="#111827" font-weight="bold">控制读</text>
+<text x="30" y="314" font-size="11" text-anchor="start" fill="#6b7280">例：GET_DESCRIPTOR</text>
+<rect x="150" y="270" width="150" height="52" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="225.0" y="292" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">SETUP</text>
+<text x="225.0" y="311" font-size="11" text-anchor="middle" fill="#374151">DATA0 · 8 字节</text>
+<rect x="330" y="270" width="170" height="52" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="415.0" y="292" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">IN</text>
+<text x="415.0" y="311" font-size="11" text-anchor="middle" fill="#374151">DATA1 · 64 字节</text>
+<rect x="510" y="270" width="170" height="52" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="595.0" y="292" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">IN</text>
+<text x="595.0" y="311" font-size="11" text-anchor="middle" fill="#374151">DATA0 · 剩下的（短包）</text>
+<rect x="760" y="270" width="170" height="52" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="845.0" y="292" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">OUT</text>
+<text x="845.0" y="311" font-size="11" text-anchor="middle" fill="#374151">DATA1 · 0 字节</text>
+<line x1="302" y1="296" x2="326" y2="296" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="502" y1="296" x2="506" y2="296" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="682" y1="296" x2="756" y2="296" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#ah)"/>
+<path d="M150,264 L150,258 L300,258 L300,264" fill="none" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="225.0" y="252" font-size="12" text-anchor="middle" fill="#4f46e5" font-weight="bold">① 建立阶段</text>
+<path d="M330,264 L330,258 L680,258 L680,264" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+<text x="505.0" y="252" font-size="12" text-anchor="middle" fill="#16a34a" font-weight="bold">② 数据阶段（0 个或多个事务）</text>
+<path d="M760,264 L760,258 L930,258 L930,264" fill="none" stroke="#ea580c" stroke-width="1.5"/>
+<text x="845.0" y="252" font-size="12" text-anchor="middle" fill="#ea580c" font-weight="bold">③ 状态阶段：方向反过来</text>
+<text x="30" y="386" font-size="15" text-anchor="start" fill="#111827" font-weight="bold">控制写</text>
+<text x="30" y="406" font-size="11" text-anchor="start" fill="#6b7280">例：SET_LINE_CODING</text>
+<rect x="150" y="362" width="150" height="52" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="225.0" y="384" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">SETUP</text>
+<text x="225.0" y="403" font-size="11" text-anchor="middle" fill="#374151">DATA0 · 8 字节</text>
+<rect x="330" y="362" width="170" height="52" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="415.0" y="384" font-size="13" text-anchor="middle" fill="#15803d" font-weight="bold">OUT</text>
+<text x="415.0" y="403" font-size="11" text-anchor="middle" fill="#374151">DATA1 · 7 字节</text>
+<rect x="760" y="362" width="170" height="52" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="845.0" y="384" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">IN</text>
+<text x="845.0" y="403" font-size="11" text-anchor="middle" fill="#374151">DATA1 · 0 字节</text>
+<line x1="302" y1="388" x2="326" y2="388" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="502" y1="388" x2="756" y2="388" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#ah)"/>
+<text x="30" y="478" font-size="15" text-anchor="start" fill="#111827" font-weight="bold">无数据</text>
+<text x="30" y="498" font-size="11" text-anchor="start" fill="#6b7280">例：SET_ADDRESS</text>
+<rect x="150" y="454" width="150" height="52" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="225.0" y="476" font-size="13" text-anchor="middle" fill="#3730a3" font-weight="bold">SETUP</text>
+<text x="225.0" y="495" font-size="11" text-anchor="middle" fill="#374151">DATA0 · 8 字节</text>
+<rect x="760" y="454" width="170" height="52" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="845.0" y="476" font-size="13" text-anchor="middle" fill="#c2410c" font-weight="bold">IN</text>
+<text x="845.0" y="495" font-size="11" text-anchor="middle" fill="#374151">DATA1 · 0 字节</text>
+<line x1="302" y1="480" x2="756" y2="480" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#ah)"/>
+<text x="30" y="548" font-size="12" text-anchor="start" fill="#374151">• 建立阶段：SETUP 令牌 + 永远 DATA0 + 设备必须回 ACK（不许 NAK/STALL）。新的 SETUP 会打断上一个没做完的控制传输。</text>
+<text x="30" y="570" font-size="12" text-anchor="start" fill="#374151">• 数据阶段：从 DATA1 开始轮流；方向由 bmRequestType 的 D7 决定。收到短包或读满 wLength 就结束。</text>
+<text x="30" y="592" font-size="12" text-anchor="start" fill="#374151">• 状态阶段：方向和数据阶段相反，固定是 0 字节的 DATA1。设备在这里回 ACK=成功、NAK=还在忙、STALL=不支持。</text>
+<text x="30" y="614" font-size="12" text-anchor="start" fill="#b91c1c" font-weight="bold">• SET_ADDRESS 要在状态阶段完成之后才生效（本章例子第 6 部分的 bug 就是犯了这一条）。</text>
+</svg>

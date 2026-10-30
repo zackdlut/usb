@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Noto Serif CJK SC, sans-serif" font-size="14">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f46e5"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker></defs>
+<rect width="1000" height="660" fill="#ffffff"/>
+<text x="500" y="32" font-size="20" text-anchor="middle" fill="#111827" font-weight="bold">HID 键盘：描述符说清“报告长什么样”，主机定时来取</text>
+<text x="30" y="66" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">① 配置描述符里多了一个 HID 描述符</text>
+<rect x="30" y="80" width="330" height="54" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="42" y="102" font-size="13" text-anchor="start" fill="#15803d" font-weight="bold">接口 0：类 0x03 HID，子类 1 启动，协议 1 键盘</text>
+<text x="42" y="122" font-size="12" text-anchor="start" fill="#374151">系统自带驱动：usbhid / hidclass.sys</text>
+<rect x="50" y="146" width="310" height="54" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<text x="62" y="168" font-size="13" text-anchor="start" fill="#b45309" font-weight="bold">HID 描述符（类型 0x21，9 字节）</text>
+<text x="62" y="188" font-size="12" text-anchor="start" fill="#374151">HID 1.11；报告描述符类型 0x22，长 63 字节</text>
+<rect x="50" y="212" width="310" height="54" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+<text x="62" y="234" font-size="13" text-anchor="start" fill="#c2410c" font-weight="bold">端点 0x81：中断 IN，8 字节，bInterval 10</text>
+<text x="62" y="254" font-size="12" text-anchor="start" fill="#374151">主机每 10 ms 来问一次“有新按键吗”</text>
+<line x1="40" y1="134" x2="40" y2="240" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="40" y1="173" x2="48" y2="173" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="40" y1="240" x2="48" y2="240" stroke="#9ca3af" stroke-width="1.5"/>
+<rect x="30" y="280" width="330" height="70" rx="8" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="42" y="302" font-size="12" text-anchor="start" fill="#111827" font-weight="bold">报告描述符（63 字节）不在配置描述符里：</text>
+<text x="42" y="322" font-size="12" text-anchor="start" fill="#374151">HID 驱动单独发 GET_DESCRIPTOR(0x22)，</text>
+<text x="42" y="340" font-size="12" text-anchor="start" fill="#374151">接收者是“接口 0”而不是设备。</text>
+<text x="400" y="66" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">② 输入报告：8 字节（按下 Shift+H 时）</text>
+<rect x="400" y="80" width="66" height="56" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="433" y="104" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">02</text>
+<text x="433" y="126" font-size="11" text-anchor="middle" fill="#b45309" font-weight="bold">修饰键</text>
+<rect x="470" y="80" width="66" height="56" rx="6" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="503" y="104" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">00</text>
+<text x="503" y="126" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">保留</text>
+<rect x="540" y="80" width="66" height="56" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="573" y="104" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">0B</text>
+<text x="573" y="126" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">键码 1</text>
+<rect x="610" y="80" width="66" height="56" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="643" y="104" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">00</text>
+<text x="643" y="126" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">键码 2</text>
+<rect x="680" y="80" width="66" height="56" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="713" y="104" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">00</text>
+<text x="713" y="126" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">键码 3</text>
+<rect x="750" y="80" width="66" height="56" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="783" y="104" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">00</text>
+<text x="783" y="126" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">键码 4</text>
+<rect x="820" y="80" width="66" height="56" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="853" y="104" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">00</text>
+<text x="853" y="126" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">键码 5</text>
+<rect x="890" y="80" width="66" height="56" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="923" y="104" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold" font-family="monospace">00</text>
+<text x="923" y="126" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">键码 6</text>
+<text x="643" y="156" font-size="12" text-anchor="middle" fill="#15803d">0x0B = 键盘用途表里的 “h”；同时最多 6 个键</text>
+<text x="400" y="186" font-size="12" text-anchor="start" fill="#b45309" font-weight="bold">修饰键字节的 8 位（bit0 在左）：</text>
+<rect x="400" y="196" width="66" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="433" y="216" font-size="11" text-anchor="middle" fill="#b45309" font-weight="bold">L Ctrl</text>
+<rect x="470" y="196" width="66" height="30" rx="4" fill="#d97706" stroke="#d97706" stroke-width="1.2"/>
+<text x="503" y="216" font-size="11" text-anchor="middle" fill="#ffffff" font-weight="bold">L Shift</text>
+<rect x="540" y="196" width="66" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="573" y="216" font-size="11" text-anchor="middle" fill="#b45309" font-weight="bold">L Alt</text>
+<rect x="610" y="196" width="66" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="643" y="216" font-size="11" text-anchor="middle" fill="#b45309" font-weight="bold">L GUI</text>
+<rect x="680" y="196" width="66" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="713" y="216" font-size="11" text-anchor="middle" fill="#b45309" font-weight="bold">R Ctrl</text>
+<rect x="750" y="196" width="66" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="783" y="216" font-size="11" text-anchor="middle" fill="#b45309" font-weight="bold">R Shift</text>
+<rect x="820" y="196" width="66" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="853" y="216" font-size="11" text-anchor="middle" fill="#b45309" font-weight="bold">R Alt</text>
+<rect x="890" y="196" width="66" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="923" y="216" font-size="11" text-anchor="middle" fill="#b45309" font-weight="bold">R GUI</text>
+<text x="400" y="258" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">③ 输出报告：1 字节，主机 → 键盘（SET_REPORT），控制指示灯</text>
+<rect x="400" y="270" width="66" height="30" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="433" y="290" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">Num</text>
+<rect x="470" y="270" width="66" height="30" rx="4" fill="#4f46e5" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="503" y="290" font-size="11" text-anchor="middle" fill="#ffffff" font-weight="bold">Caps</text>
+<rect x="540" y="270" width="66" height="30" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="573" y="290" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">Scroll</text>
+<rect x="610" y="270" width="66" height="30" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="643" y="290" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">Compose</text>
+<rect x="680" y="270" width="66" height="30" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="713" y="290" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">Kana</text>
+<rect x="750" y="270" width="66" height="30" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="783" y="290" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">填充</text>
+<rect x="820" y="270" width="66" height="30" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="853" y="290" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">填充</text>
+<rect x="890" y="270" width="66" height="30" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.2"/>
+<text x="923" y="290" font-size="11" text-anchor="middle" fill="#374151" font-weight="bold">填充</text>
+<text x="400" y="326" font-size="12" text-anchor="start" fill="#4b5563">按下 Caps Lock：键盘只上报“按了这个键”，由主机决定点灯，再发 0x02 回来。</text>
+<text x="400" y="344" font-size="12" text-anchor="start" fill="#4b5563">所以两个键盘插在同一台电脑上，Caps 灯是同步的。</text>
+<line x1="20" y1="368" x2="980" y2="368" stroke="#e5e7eb" stroke-width="2"/>
+<text x="30" y="394" font-size="15" text-anchor="start" fill="#374151" font-weight="bold">④ 轮询：主机每 10 ms 发一次 IN，设备有新报告就给，没有就 NAK</text>
+<line x1="40" y1="470" x2="930" y2="470" stroke="#374151" stroke-width="2" marker-end="url(#ah)"/>
+<text x="940" y="474" font-size="12" text-anchor="start" fill="#374151">时间</text>
+<line x1="70" y1="462" x2="70" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="70" y="496" font-size="11" text-anchor="middle" fill="#6b7280">0 ms</text>
+<rect x="54" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="70" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="70" y1="450" x2="70" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="44" y="506" width="52" height="28" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="70" y="525" font-size="12" text-anchor="middle" fill="#b45309" font-weight="bold" font-family="monospace">NAK</text>
+<line x1="158" y1="462" x2="158" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="158" y="496" font-size="11" text-anchor="middle" fill="#6b7280">10 ms</text>
+<rect x="142" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="158" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="158" y1="450" x2="158" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="118" y="506" width="80" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="158" y="524" font-size="11" text-anchor="middle" fill="#111827">02 00 0B…</text>
+<text x="158" y="542" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">H 按下</text>
+<line x1="246" y1="462" x2="246" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="246" y="496" font-size="11" text-anchor="middle" fill="#6b7280">20 ms</text>
+<rect x="230" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="246" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="246" y1="450" x2="246" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="206" y="506" width="80" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="246" y="524" font-size="11" text-anchor="middle" fill="#111827">00 00 00…</text>
+<text x="246" y="542" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">松开</text>
+<line x1="334" y1="462" x2="334" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="334" y="496" font-size="11" text-anchor="middle" fill="#6b7280">30 ms</text>
+<rect x="318" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="334" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="334" y1="450" x2="334" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="294" y="506" width="80" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="334" y="524" font-size="11" text-anchor="middle" fill="#111827">00 00 08…</text>
+<text x="334" y="542" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">e 按下</text>
+<line x1="422" y1="462" x2="422" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="422" y="496" font-size="11" text-anchor="middle" fill="#6b7280">40 ms</text>
+<rect x="406" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="422" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="422" y1="450" x2="422" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="382" y="506" width="80" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="422" y="524" font-size="11" text-anchor="middle" fill="#111827">00 00 00…</text>
+<text x="422" y="542" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">松开</text>
+<line x1="510" y1="462" x2="510" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="510" y="496" font-size="11" text-anchor="middle" fill="#6b7280">50 ms</text>
+<rect x="494" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="510" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="510" y1="450" x2="510" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="484" y="506" width="52" height="28" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="510" y="525" font-size="12" text-anchor="middle" fill="#b45309" font-weight="bold" font-family="monospace">NAK</text>
+<line x1="598" y1="462" x2="598" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="598" y="496" font-size="11" text-anchor="middle" fill="#6b7280">60 ms</text>
+<rect x="582" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="598" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="598" y1="450" x2="598" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="572" y="506" width="52" height="28" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="598" y="525" font-size="12" text-anchor="middle" fill="#b45309" font-weight="bold" font-family="monospace">NAK</text>
+<line x1="686" y1="462" x2="686" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="686" y="496" font-size="11" text-anchor="middle" fill="#6b7280">70 ms</text>
+<rect x="670" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="686" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="686" y1="450" x2="686" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="646" y="506" width="80" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="686" y="524" font-size="11" text-anchor="middle" fill="#111827">00 00 0F…</text>
+<text x="686" y="542" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">l 按下</text>
+<line x1="774" y1="462" x2="774" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="774" y="496" font-size="11" text-anchor="middle" fill="#6b7280">80 ms</text>
+<rect x="758" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="774" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="774" y1="450" x2="774" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="734" y="506" width="80" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="774" y="524" font-size="11" text-anchor="middle" fill="#111827">00 00 00…</text>
+<text x="774" y="542" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">松开</text>
+<line x1="862" y1="462" x2="862" y2="478" stroke="#374151" stroke-width="2"/>
+<text x="862" y="496" font-size="11" text-anchor="middle" fill="#6b7280">90 ms</text>
+<rect x="846" y="428" width="32" height="22" rx="11" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.2"/>
+<text x="862" y="443" font-size="11" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<line x1="862" y1="450" x2="862" y2="462" stroke="#4f46e5" stroke-width="1.5"/>
+<rect x="822" y="506" width="80" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="862" y="524" font-size="11" text-anchor="middle" fill="#111827">00 00 0F…</text>
+<text x="862" y="542" font-size="11" text-anchor="middle" fill="#15803d" font-weight="bold">l 按下</text>
+<text x="30" y="580" font-size="12" text-anchor="start" fill="#374151">• 每个字符都要“按下 + 松开”两份报告：连续两个 l 之间如果没有“全 0”，主机会以为 l 一直按着（只出一个 l）。</text>
+<text x="30" y="602" font-size="12" text-anchor="start" fill="#374151">• 中断端点的“延迟有保证”就体现在这里：按键最晚 10 ms 内被主机看到。NAK 是常态，不是错误。</text>
+<text x="30" y="632" font-size="12" text-anchor="start" fill="#c2410c" font-weight="bold">⑤ 报告描述符由“条目”组成，前缀字节 = tag(4 位) | type(2 位：0 Main 1 Global 2 Local) | size(2 位：0/1/2/4 字节)。例：0x75 0x08 = Report Size(8)</text>
+</svg>

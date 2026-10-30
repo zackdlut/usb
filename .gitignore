@@ -1,0 +1,4 @@
+/build/
+/.cache/
+examples/11-stm32-vendor/build/
+examples/11-stm32-vendor/build-dkx/
