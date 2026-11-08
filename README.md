@@ -5,6 +5,7 @@
 - 前 9 章和第 12 章：**纯软件**，一台装了 `g++` 和 `cmake` 的 Linux / WSL2 就能跟着做
 - 第 10 章：PC 上的主机程序，需要 `libusb-1.0-0-dev`
 - 第 11 章：STM32 固件，需要 `arm-none-eabi-gcc`、隔壁 [`../stm32`](../stm32/docs/README.md) 教程的构建框架，和一块 **STM32F4 Discovery** 或 **立创·地阔星 STM32F103C8T6**
+- 第 13 章：Linux 内核模块，需要 **原生 Linux** 与 `linux-headers-$(uname -r)`（不建议在缺 headers 的 WSL2 上编模块）
 - 每章都有可运行代码（`examples/`）、原理图（`docs/images/`）和**本机实际运行输出**
 - 只讲全速（12 Mbit/s）USB 2.0：最常见、单片机最容易做、所有概念都齐全
 
@@ -23,7 +24,7 @@
                                                                         │
 实战篇：真实的主机、真实的设备、真实的排错                              │
                                                                         ▼
-  10 libusb 主机程序  ⇄  11 STM32 + TinyUSB 固件  →  12 抓包与排错
+  10 libusb 主机程序  ⇄  11 STM32 + TinyUSB 固件  →  12 抓包与排错  →  13 Linux 内核驱动
 ```
 
 协议篇是**自底向上**的：每一章都用上一章的东西。第 2 章把比特变成电平，第 3 章把字节变成包，第 4 章把包组成事务，第 5 章把事务组成传输……到第 7 章，你会看到主机和设备完整地走一遍枚举，而其中每一个字节都是你在前面几章亲手算过的。
@@ -46,6 +47,7 @@
 | 10 | [libusb 主机程序](docs/10-libusb.md) | `10-libusb/` | 读真实设备的描述符、厂商请求、批量回环、WSL2 usbipd、udev |
 | 11 | [STM32 + TinyUSB](docs/11-stm32-tinyusb.md) | `11-stm32-vendor/` | 厂商自定义设备、DWC2 与 FSDEV、48 MHz 时钟、烧录联调 |
 | 12 | [抓包与排错](docs/12-debugging.md) | `12-troubleshoot` | 四种典型故障、`dmesg`、设备管理器、Wireshark |
+| 13 | [Linux USB 内核驱动](docs/13-linux-usb-driver.md) | `13-kernel-driver/` | probe/sysfs、字符设备、`usb_control_msg` / `usb_bulk_msg` 与 libusb 对照 |
 
 ## 快速开始
 

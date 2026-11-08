@@ -296,7 +296,7 @@ $ zcat /proc/config.gz | grep USB_MON
 
 ## 接下来学什么
 
-到这里，你已经从电平一路走到了真实的设备和主机程序。往下可以继续的方向：
+到这里，你已经从电平一路走到了真实的设备和主机程序。若要在内核里绑定厂商设备、导出 `/dev` 节点，请继续 [第 13 章　Linux USB 内核驱动](13-linux-usb-driver.md)。其他方向：
 
 - **高速 USB（480 Mbit/s）**：Chirp 握手、125 µs 微帧、PING 协议。需要带高速 PHY 的芯片，比如 STM32F7/H7 的 OTG_HS。
 - **USB 3.x**：完全不同的物理层（多了一对收发差分线），但描述符和请求的概念基本不变。
@@ -306,4 +306,4 @@ $ zcat /proc/config.gz | grep USB_MON
 
 ---
 
-上一章：[第 11 章　STM32 + TinyUSB](11-stm32-tinyusb.md)　|　回到：[教程目录](../README.md)
+上一章：[第 11 章　STM32 + TinyUSB](11-stm32-tinyusb.md)　|　下一章：[第 13 章　Linux USB 内核驱动](13-linux-usb-driver.md)

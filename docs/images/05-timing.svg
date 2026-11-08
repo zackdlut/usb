@@ -1,0 +1,274 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 1010" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Noto Serif CJK SC, sans-serif" font-size="14">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f46e5"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker></defs>
+<rect width="1120" height="1010" fill="#ffffff"/>
+<text x="560.0" y="32" font-size="20" text-anchor="middle" fill="#111827" font-weight="bold">四种传输的时序图：总线上一个包接一个包发生了什么</text>
+<text x="560.0" y="56" font-size="12.5" text-anchor="middle" fill="#4b5563">时间从左往右；轴上方是主机发出的包，轴下方是设备发出的包。包的宽度只是示意，不按比例（按真实比例画的一个事务见 5.4 节）</text>
+<rect x="18" y="106" width="145" height="88" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="90" y="134" font-size="14" text-anchor="middle" fill="#3730a3" font-weight="bold">控制读</text>
+<text x="90" y="156" font-size="11" text-anchor="middle" fill="#374151">GET_DESCRIPTOR</text>
+<text x="90" y="173" font-size="11" text-anchor="middle" fill="#374151">设备描述符 18 字节</text>
+<text x="90" y="190" font-size="11" text-anchor="middle" fill="#374151">端点 0，包长 64</text>
+<rect x="170" y="110" width="194" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="267.0" y="104" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">建立阶段</text>
+<rect x="175" y="121" width="58" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="204.0" y="138.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">SETUP</text>
+<rect x="237" y="121" width="74" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="274.0" y="138.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 8B</text>
+<rect x="315" y="153" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="337.0" y="170.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="279" y="206" font-size="11" text-anchor="middle" fill="#4b5563">8 字节请求，必须 ACK</text>
+<rect x="380" y="110" width="288" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="524.0" y="104" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">数据阶段</text>
+<rect x="385" y="121" width="40" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="405.0" y="138.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="429" y="153" width="44" height="26" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="451.0" y="170.5" font-size="11.5" text-anchor="middle" fill="#b45309" font-weight="bold">NAK</text>
+<text x="429.0" y="206" font-size="11" text-anchor="middle" fill="#4b5563">还没准备好</text>
+<line x1="482" y1="116" x2="482" y2="184" stroke="#d1d5db" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="491" y="121" width="40" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="511.0" y="138.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="535" y="153" width="80" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="575.0" y="170.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA1 18B</text>
+<rect x="619" y="121" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="641.0" y="138.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="578" y="206" font-size="11" text-anchor="middle" fill="#4b5563">18 &lt; 64，短包：数据阶段结束</text>
+<rect x="684" y="110" width="180" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="774.0" y="104" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">状态阶段</text>
+<rect x="689" y="121" width="46" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="712.0" y="138.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">OUT</text>
+<rect x="739" y="121" width="72" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="775.0" y="138.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA1 0B</text>
+<rect x="815" y="153" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="837.0" y="170.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="779" y="206" font-size="11" text-anchor="middle" fill="#4b5563">方向相反、零长度、DATA1</text>
+<line x1="167" y1="150" x2="1100" y2="150" stroke="#9ca3af" stroke-width="1.3" marker-end="url(#ah)"/>
+<rect x="18" y="246" width="145" height="88" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="90" y="274" font-size="14" text-anchor="middle" fill="#3730a3" font-weight="bold">控制写</text>
+<text x="90" y="296" font-size="11" text-anchor="middle" fill="#374151">SET_CONFIGURATION</text>
+<text x="90" y="313" font-size="11" text-anchor="middle" fill="#374151">无数据阶段</text>
+<text x="90" y="330" font-size="11" text-anchor="middle" fill="#374151">再发一个不支持的请求</text>
+<rect x="170" y="250" width="194" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="267.0" y="244" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">建立阶段</text>
+<rect x="175" y="261" width="58" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="204.0" y="278.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">SETUP</text>
+<rect x="237" y="261" width="74" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="274.0" y="278.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 8B</text>
+<rect x="315" y="293" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="337.0" y="310.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<rect x="380" y="250" width="174" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="467.0" y="244" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">状态阶段</text>
+<rect x="385" y="261" width="40" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="405.0" y="278.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="429" y="293" width="72" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="465.0" y="310.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA1 0B</text>
+<rect x="505" y="261" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="527.0" y="278.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="469" y="346" font-size="11" text-anchor="middle" fill="#4b5563">设备回零长度包 = 处理完了</text>
+<line x1="569" y1="250" x2="569" y2="330" stroke="#d1d5db" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="604" y="250" width="194" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="701.0" y="244" font-size="11.5" text-anchor="middle" fill="#b91c1c" font-weight="bold">下一个请求：厂商请求 0x7F</text>
+<rect x="609" y="261" width="58" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="638.0" y="278.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">SETUP</text>
+<rect x="671" y="261" width="74" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="708.0" y="278.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 8B</text>
+<rect x="749" y="293" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="771.0" y="310.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="701.0" y="346" font-size="11" text-anchor="middle" fill="#4b5563">SETUP 永远要 ACK</text>
+<rect x="802" y="250" width="106" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<rect x="807" y="261" width="40" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="827.0" y="278.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="851" y="293" width="52" height="26" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="877.0" y="310.5" font-size="11.5" text-anchor="middle" fill="#b91c1c" font-weight="bold">STALL</text>
+<text x="885.0" y="346" font-size="11" text-anchor="middle" fill="#b91c1c">不支持：回 STALL，下一个 SETUP 自动解除</text>
+<line x1="167" y1="290" x2="1100" y2="290" stroke="#9ca3af" stroke-width="1.3" marker-end="url(#ah)"/>
+<rect x="18" y="386" width="145" height="88" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="90" y="414" font-size="14" text-anchor="middle" fill="#15803d" font-weight="bold">批量写</text>
+<text x="90" y="436" font-size="11" text-anchor="middle" fill="#374151">150 字节</text>
+<text x="90" y="453" font-size="11" text-anchor="middle" fill="#374151">端点 0x02，包长 64</text>
+<text x="90" y="470" font-size="11" text-anchor="middle" fill="#374151">64 + 64 + 22</text>
+<rect x="170" y="390" width="188" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="264.0" y="384" font-size="11.5" text-anchor="middle" fill="#6b7280" font-weight="bold">事务 1</text>
+<rect x="175" y="401" width="46" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="198.0" y="418.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">OUT</text>
+<rect x="225" y="401" width="80" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="265.0" y="418.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 64B</text>
+<rect x="309" y="433" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="331.0" y="450.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<rect x="366" y="390" width="188" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="460.0" y="384" font-size="11.5" text-anchor="middle" fill="#b45309" font-weight="bold">事务 2</text>
+<rect x="371" y="401" width="46" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="394.0" y="418.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">OUT</text>
+<rect x="421" y="401" width="80" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="461.0" y="418.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA1 64B</text>
+<rect x="505" y="433" width="44" height="26" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="527.0" y="450.5" font-size="11.5" text-anchor="middle" fill="#b45309" font-weight="bold">NAK</text>
+<text x="460.0" y="486" font-size="11" text-anchor="middle" fill="#b45309">设备缓冲满：这包作废</text>
+<rect x="562" y="390" width="188" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="656.0" y="384" font-size="11.5" text-anchor="middle" fill="#6b7280" font-weight="bold">事务 2 重发</text>
+<rect x="567" y="401" width="46" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="590.0" y="418.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">OUT</text>
+<rect x="617" y="401" width="80" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="657.0" y="418.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA1 64B</text>
+<rect x="701" y="433" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="723.0" y="450.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="656.0" y="486" font-size="11" text-anchor="middle" fill="#4b5563">还是 DATA1：没成功就不翻转</text>
+<rect x="758" y="390" width="188" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="852.0" y="384" font-size="11.5" text-anchor="middle" fill="#6b7280" font-weight="bold">事务 3</text>
+<rect x="763" y="401" width="46" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="786.0" y="418.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">OUT</text>
+<rect x="813" y="401" width="80" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="853.0" y="418.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 22B</text>
+<rect x="897" y="433" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="919.0" y="450.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="852.0" y="486" font-size="11" text-anchor="middle" fill="#4b5563">22 &lt; 64 短包：传输结束</text>
+<line x1="167" y1="430" x2="1100" y2="430" stroke="#9ca3af" stroke-width="1.3" marker-end="url(#ah)"/>
+<rect x="18" y="526" width="145" height="88" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="90" y="554" font-size="14" text-anchor="middle" fill="#15803d" font-weight="bold">批量读</text>
+<text x="90" y="576" font-size="11" text-anchor="middle" fill="#374151">128 字节 = 2 × 64</text>
+<text x="90" y="593" font-size="11" text-anchor="middle" fill="#374151">端点 0x82</text>
+<text x="90" y="610" font-size="11" text-anchor="middle" fill="#374151">出错一次 + ZLP</text>
+<rect x="170" y="530" width="134" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="237.0" y="524" font-size="11.5" text-anchor="middle" fill="#b91c1c" font-weight="bold">事务 1</text>
+<rect x="175" y="541" width="40" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="195.0" y="558.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="219" y="573" width="80" height="26" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="259.0" y="590.5" font-size="11.5" text-anchor="middle" fill="#b91c1c" font-weight="bold">DATA0 64B</text>
+<path d="M287 561 l7 0 l-5 6 l7 0 l-9 8" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+<text x="237.0" y="626" font-size="11" text-anchor="middle" fill="#b91c1c">CRC 错：主机不回握手</text>
+<rect x="312" y="530" width="182" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="403.0" y="524" font-size="11.5" text-anchor="middle" fill="#6b7280" font-weight="bold">事务 1 重试</text>
+<rect x="317" y="541" width="40" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="337.0" y="558.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="361" y="573" width="80" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="401.0" y="590.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 64B</text>
+<rect x="445" y="541" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="467.0" y="558.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="403.0" y="626" font-size="11" text-anchor="middle" fill="#4b5563">设备没等到 ACK，原样重发</text>
+<rect x="502" y="530" width="182" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="593.0" y="524" font-size="11.5" text-anchor="middle" fill="#6b7280" font-weight="bold">事务 2</text>
+<rect x="507" y="541" width="40" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="527.0" y="558.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="551" y="573" width="80" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="591.0" y="590.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA1 64B</text>
+<rect x="635" y="541" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="657.0" y="558.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<rect x="692" y="530" width="174" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<text x="779.0" y="524" font-size="11.5" text-anchor="middle" fill="#6b7280" font-weight="bold">事务 3</text>
+<rect x="697" y="541" width="40" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="717.0" y="558.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="741" y="573" width="72" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="777.0" y="590.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 0B</text>
+<rect x="817" y="541" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="839.0" y="558.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="779.0" y="626" font-size="11" text-anchor="middle" fill="#4b5563">ZLP：正好是 64 的整数倍，靠零长度包结束</text>
+<line x1="167" y1="570" x2="1100" y2="570" stroke="#9ca3af" stroke-width="1.3" marker-end="url(#ah)"/>
+<rect x="18" y="686" width="145" height="88" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="90" y="714" font-size="14" text-anchor="middle" fill="#b45309" font-weight="bold">中断读</text>
+<text x="90" y="736" font-size="11" text-anchor="middle" fill="#374151">键盘，端点 0x81</text>
+<text x="90" y="753" font-size="11" text-anchor="middle" fill="#374151">包长 8</text>
+<text x="90" y="770" font-size="11" text-anchor="middle" fill="#374151">bInterval = 4 ms</text>
+<line x1="175" y1="672" x2="175" y2="772" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="179" y="682" font-size="11" text-anchor="start" fill="#6b7280" font-weight="bold">帧 N</text>
+<rect x="179" y="701" width="36" height="26" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="197.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#374151" font-weight="bold">SOF</text>
+<rect x="220" y="690" width="96" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<rect x="225" y="701" width="38" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="244.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="267" y="733" width="44" height="26" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="289.0" y="750.5" font-size="11.5" text-anchor="middle" fill="#b45309" font-weight="bold">NAK</text>
+<text x="268.0" y="786" font-size="11" text-anchor="middle" fill="#b45309">没按键：NAK</text>
+<line x1="329" y1="672" x2="329" y2="772" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="333" y="682" font-size="11" text-anchor="start" fill="#6b7280" font-weight="bold">N+1</text>
+<rect x="333" y="701" width="36" height="26" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="351.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#374151" font-weight="bold">SOF</text>
+<text x="418.0" y="718" font-size="11" text-anchor="middle" fill="#6b7280">…N+3 只有 SOF</text>
+<line x1="479" y1="672" x2="479" y2="772" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="483" y="682" font-size="11" text-anchor="start" fill="#6b7280" font-weight="bold">帧 N+4</text>
+<rect x="483" y="701" width="36" height="26" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="501.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#374151" font-weight="bold">SOF</text>
+<rect x="524" y="690" width="174" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<rect x="529" y="701" width="38" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="548.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="571" y="733" width="74" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="608.0" y="750.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 8B</text>
+<rect x="649" y="701" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="671.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="611.0" y="786" font-size="11" text-anchor="middle" fill="#4b5563">按下了：8 字节报告</text>
+<line x1="711" y1="672" x2="711" y2="772" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="715" y="682" font-size="11" text-anchor="start" fill="#6b7280" font-weight="bold">N+5</text>
+<rect x="715" y="701" width="36" height="26" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="733.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#374151" font-weight="bold">SOF</text>
+<text x="800.0" y="718" font-size="11" text-anchor="middle" fill="#6b7280">…N+7 只有 SOF</text>
+<line x1="861" y1="672" x2="861" y2="772" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="865" y="682" font-size="11" text-anchor="start" fill="#6b7280" font-weight="bold">帧 N+8</text>
+<rect x="865" y="701" width="36" height="26" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="883.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#374151" font-weight="bold">SOF</text>
+<rect x="906" y="690" width="174" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<rect x="911" y="701" width="38" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="930.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">IN</text>
+<rect x="953" y="733" width="74" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="990.0" y="750.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA1 8B</text>
+<rect x="1031" y="701" width="44" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="1053.0" y="718.5" font-size="11.5" text-anchor="middle" fill="#15803d" font-weight="bold">ACK</text>
+<text x="993.0" y="786" font-size="11" text-anchor="middle" fill="#4b5563">松开了：全 0 报告</text>
+<line x1="167" y1="730" x2="1100" y2="730" stroke="#9ca3af" stroke-width="1.3" marker-end="url(#ah)"/>
+<rect x="18" y="836" width="145" height="88" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="90" y="864" font-size="14" text-anchor="middle" fill="#c2410c" font-weight="bold">同步写</text>
+<text x="90" y="886" font-size="11" text-anchor="middle" fill="#374151">音箱，端点 0x01</text>
+<text x="90" y="903" font-size="11" text-anchor="middle" fill="#374151">每帧 192 字节</text>
+<text x="90" y="920" font-size="11" text-anchor="middle" fill="#374151">48 kHz × 2 声道 × 16 位</text>
+<line x1="175" y1="822" x2="175" y2="922" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="179" y="832" font-size="11" text-anchor="start" fill="#6b7280" font-weight="bold">帧 N</text>
+<rect x="179" y="851" width="36" height="26" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="197.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#374151" font-weight="bold">SOF</text>
+<rect x="220" y="840" width="150" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<rect x="225" y="851" width="44" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="247.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">OUT</text>
+<rect x="273" y="851" width="92" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="319.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 192B</text>
+<text x="295.0" y="936" font-size="11" text-anchor="middle" fill="#4b5563">没有握手，永远 DATA0</text>
+<line x1="415" y1="822" x2="415" y2="922" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="419" y="832" font-size="11" text-anchor="start" fill="#6b7280" font-weight="bold">帧 N+1</text>
+<rect x="419" y="851" width="36" height="26" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="437.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#374151" font-weight="bold">SOF</text>
+<rect x="460" y="840" width="150" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<rect x="465" y="851" width="44" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="487.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">OUT</text>
+<rect x="513" y="851" width="92" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="559.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 192B</text>
+<line x1="655" y1="822" x2="655" y2="922" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="659" y="832" font-size="11" text-anchor="start" fill="#6b7280" font-weight="bold">帧 N+2</text>
+<rect x="659" y="851" width="36" height="26" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="677.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#374151" font-weight="bold">SOF</text>
+<rect x="700" y="840" width="150" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<rect x="705" y="851" width="44" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="727.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">OUT</text>
+<rect x="753" y="851" width="92" height="26" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="799.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#b91c1c" font-weight="bold">DATA0 192B</text>
+<path d="M833 839 l7 0 l-5 6 l7 0 l-9 8" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+<text x="775.0" y="936" font-size="11" text-anchor="middle" fill="#b91c1c">噪声打坏：丢掉，不重发</text>
+<line x1="895" y1="822" x2="895" y2="922" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="899" y="832" font-size="11" text-anchor="start" fill="#6b7280" font-weight="bold">帧 N+3</text>
+<rect x="899" y="851" width="36" height="26" rx="4" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="917.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#374151" font-weight="bold">SOF</text>
+<rect x="940" y="840" width="150" height="80" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1" fill-opacity="0.9"/>
+<rect x="945" y="851" width="44" height="26" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="967.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#3730a3" font-weight="bold">OUT</text>
+<rect x="993" y="851" width="92" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="1039.0" y="868.5" font-size="11.5" text-anchor="middle" fill="#075985" font-weight="bold">DATA0 192B</text>
+<line x1="167" y1="880" x2="1100" y2="880" stroke="#9ca3af" stroke-width="1.3" marker-end="url(#ah)"/>
+<rect x="40" y="962" width="26" height="16" rx="3" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+<text x="74" y="975" font-size="12" text-anchor="start" fill="#374151">令牌包（主机）</text>
+<rect x="191.5" y="962" width="26" height="16" rx="3" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="225.5" y="975" font-size="12" text-anchor="start" fill="#374151">数据包</text>
+<rect x="293.0" y="962" width="26" height="16" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="327.0" y="975" font-size="12" text-anchor="start" fill="#374151">ACK</text>
+<rect x="394.5" y="962" width="26" height="16" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="428.5" y="975" font-size="12" text-anchor="start" fill="#374151">NAK</text>
+<rect x="496.0" y="962" width="26" height="16" rx="3" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="530.0" y="975" font-size="12" text-anchor="start" fill="#374151">STALL</text>
+<rect x="622.5" y="962" width="26" height="16" rx="3" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="656.5" y="975" font-size="12" text-anchor="start" fill="#374151">SOF（每 1 ms）</text>
+<rect x="824.0" y="962" width="26" height="16" rx="3" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="858.0" y="975" font-size="12" text-anchor="start" fill="#374151">被噪声打坏的包</text>
+</svg>
